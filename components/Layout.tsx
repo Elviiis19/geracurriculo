@@ -192,10 +192,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         </div>
                     </div>
 
-                    <div className="border-t border-slate-100 pt-4 mt-4 text-center">
-                       <Link to="/about" className="inline-block py-2 text-xs font-bold text-slate-400 hover:text-blue-600 uppercase tracking-widest">Quem Somos</Link>
-                       <span className="mx-2 text-slate-300">|</span>
-                       <Link to="/terms" className="inline-block py-2 text-xs font-bold text-slate-400 hover:text-blue-600 uppercase tracking-widest">Termos</Link>
+                    <div className="border-t border-slate-100 pt-4 mt-4 text-center grid grid-cols-2 gap-2">
+                       <Link to="/about" className="py-2 text-xs font-bold text-slate-400 hover:text-blue-600 uppercase tracking-widest">Quem Somos</Link>
+                       <Link to="/terms" className="py-2 text-xs font-bold text-slate-400 hover:text-blue-600 uppercase tracking-widest">Termos</Link>
+                       <Link to="/contact" className="py-2 text-xs font-bold text-slate-400 hover:text-blue-600 uppercase tracking-widest">Contato</Link>
+                       <Link to="/cookies" className="py-2 text-xs font-bold text-slate-400 hover:text-blue-600 uppercase tracking-widest">Cookies</Link>
                     </div>
                 </div>
             </div>
@@ -206,30 +207,67 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
 
-      {/* Footer Minimalista */}
-      <footer className="bg-white border-t border-slate-200 mt-auto py-12 print:hidden">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-              <div className="flex justify-center items-center gap-3 mb-6 opacity-70">
-                 <div className="p-2 bg-slate-100 rounded-lg">
-                    <FileText size={20} className="text-slate-600"/>
-                 </div>
-                 <span className="font-bold text-slate-700 text-lg">Gera Currículo</span>
-              </div>
-              <p className="text-slate-500 max-w-md mx-auto mb-6 text-sm">
-                  Parte do ecossistema de ferramentas gratuitas desenvolvidas por Elvis Dias. 
-                  Simplificando a burocracia do dia a dia.
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-4 text-xs font-medium text-blue-600 mb-8">
-                  <a href="https://recibogratis.com.br" target="_blank" rel="noreferrer" className="hover:underline">Recibo Grátis</a>
-                  <span className="text-slate-300">•</span>
-                  <a href="https://declaracaoonline.com.br" target="_blank" rel="noreferrer" className="hover:underline">Declaração Online</a>
-                  <span className="text-slate-300">•</span>
-                  <a href="https://geracontrato.com.br" target="_blank" rel="noreferrer" className="hover:underline">Gera Contrato</a>
+      {/* Footer Profissional */}
+      <footer className="bg-white border-t border-slate-200 mt-auto pt-12 pb-8 print:hidden">
+          <div className="max-w-7xl mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 border-b border-slate-100 pb-12">
+                  
+                  {/* Brand Column */}
+                  <div className="text-center md:text-left">
+                      <div className="flex justify-center md:justify-start items-center gap-3 mb-4">
+                         <div className="p-2 bg-slate-900 rounded-lg text-white">
+                            <FileText size={20}/>
+                         </div>
+                         <span className="font-bold text-slate-900 text-xl">Gera Currículo</span>
+                      </div>
+                      <p className="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+                          Ferramenta gratuita para criação de currículos profissionais em PDF. Simples, rápido e sem cadastro.
+                      </p>
+                  </div>
+
+                  {/* Internal Links */}
+                  <div className="text-center md:text-left">
+                      <h4 className="font-bold text-slate-900 uppercase tracking-wider text-xs mb-4">Institucional</h4>
+                      <ul className="space-y-3 text-sm text-slate-600">
+                          <li><Link to="/about" className="hover:text-blue-600 hover:underline">Quem Somos</Link></li>
+                          <li><Link to="/contact" className="hover:text-blue-600 hover:underline">Fale Conosco</Link></li>
+                          <li><Link to="/privacy" className="hover:text-blue-600 hover:underline">Política de Privacidade</Link></li>
+                          <li><Link to="/cookies" className="hover:text-blue-600 hover:underline">Política de Cookies</Link></li>
+                          <li><Link to="/terms" className="hover:text-blue-600 hover:underline">Termos de Uso</Link></li>
+                      </ul>
+                  </div>
+
+                  {/* External Ecosystem */}
+                  <div className="text-center md:text-left">
+                      <h4 className="font-bold text-slate-900 uppercase tracking-wider text-xs mb-4">Outros Projetos Úteis</h4>
+                      <ul className="space-y-3 text-sm text-slate-600">
+                          <li>
+                              <a href="https://recibogratis.com.br" target="_blank" rel="noreferrer" className="hover:text-green-600 hover:underline flex items-center justify-center md:justify-start gap-2">
+                                  Recibo Grátis <ExternalLink size={12} className="opacity-50"/>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="https://declaracaoonline.com.br" target="_blank" rel="noreferrer" className="hover:text-green-600 hover:underline flex items-center justify-center md:justify-start gap-2">
+                                  Declaração Online <ExternalLink size={12} className="opacity-50"/>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="https://geracontrato.com.br" target="_blank" rel="noreferrer" className="hover:text-green-600 hover:underline flex items-center justify-center md:justify-start gap-2">
+                                  Gera Contrato <ExternalLink size={12} className="opacity-50"/>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
               </div>
 
-              <div className="text-xs font-medium text-slate-400 border-t border-slate-100 pt-6">
-                  &copy; {year} Elvis Dias. Todos os direitos reservados.
+              {/* Copyright */}
+              <div className="text-center">
+                  <div className="text-xs font-medium text-slate-400 mb-2">
+                      Desenvolvido por <strong className="text-slate-600">Elvis Dias</strong>
+                  </div>
+                  <div className="text-[10px] text-slate-300">
+                      &copy; {year} Gera Currículo. Todos os direitos reservados.
+                  </div>
               </div>
           </div>
       </footer>

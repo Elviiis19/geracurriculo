@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { ExternalLink, Code, Heart, Shield } from 'lucide-react';
+import { ExternalLink, Code, Heart, Shield, Cookie, Mail, MessageSquare } from 'lucide-react';
 
 export const About: React.FC = () => (
   <Layout>
@@ -108,3 +108,72 @@ export const Terms: React.FC = () => (
     </div>
   </Layout>
 );
+
+export const Cookies: React.FC = () => (
+    <Layout>
+      <div className="max-w-3xl mx-auto px-4 py-16">
+        <div className="flex items-center gap-2 mb-6">
+            <Cookie className="text-amber-500" size={32} />
+            <h1 className="text-3xl font-bold text-gray-900">Política de Cookies</h1>
+        </div>
+        
+        <div className="prose prose-blue text-gray-600 space-y-4">
+          <p>
+            O <strong>Gera Currículo</strong> utiliza cookies e tecnologias similares para melhorar a sua experiência de navegação e garantir o funcionamento correto da ferramenta.
+          </p>
+          
+          <h3 className="text-xl font-bold text-gray-800">1. O que são Cookies?</h3>
+          <p>
+            Cookies são pequenos arquivos de texto armazenados no seu dispositivo quando você visita um site. Eles servem para lembrar suas preferências e auxiliar na navegação.
+          </p>
+  
+          <h3 className="text-xl font-bold text-gray-800">2. Cookies que utilizamos</h3>
+          <ul className="list-disc pl-5 space-y-2">
+              <li><strong>Cookies Essenciais:</strong> Necessários para que o site funcione corretamente (ex: navegação entre páginas).</li>
+              <li><strong>Armazenamento Local (LocalStorage):</strong> Utilizamos o armazenamento do seu navegador para guardar temporariamente os dados do currículo enquanto você o edita, evitando perda de dados caso a página seja recarregada acidentalmente.</li>
+              <li><strong>Analytics:</strong> Podemos utilizar ferramentas anônimas para entender como os usuários interagem com o site, visando melhorias futuras.</li>
+          </ul>
+  
+          <h3 className="text-xl font-bold text-gray-800">3. Gerenciamento</h3>
+          <p>
+             Você pode desativar os cookies nas configurações do seu navegador, mas isso pode afetar o funcionamento de algumas partes do editor de currículos.
+          </p>
+        </div>
+      </div>
+    </Layout>
+  );
+
+  export const Contact: React.FC = () => (
+    <Layout>
+      <div className="max-w-3xl mx-auto px-4 py-16">
+        <div className="flex items-center gap-2 mb-8">
+            <MessageSquare className="text-blue-500" size={32} />
+            <h1 className="text-3xl font-bold text-gray-900">Fale Conosco</h1>
+        </div>
+        
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+            <p className="text-lg text-slate-600 mb-6">
+                Tem alguma dúvida sobre como usar o editor? Encontrou algum erro ou tem uma sugestão de melhoria? Entre em contato diretamente com o desenvolvedor.
+            </p>
+            
+            <div className="flex flex-col gap-6">
+                <a href="mailto:contato@elvisdias.com.br" className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors group">
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-blue-600 group-hover:scale-110 transition-transform">
+                        <Mail size={24} />
+                    </div>
+                    <div>
+                        <div className="text-sm font-bold text-slate-400 uppercase tracking-wider">E-mail para contato</div>
+                        <div className="text-lg font-bold text-slate-900">contato@elvisdias.com.br</div>
+                    </div>
+                </a>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-slate-100">
+                <p className="text-sm text-slate-500">
+                    <strong>Nota:</strong> Como esta é uma ferramenta gratuita, o suporte é realizado conforme disponibilidade. Não oferecemos consultoria de carreira ou revisão de currículos, apenas suporte técnico da ferramenta.
+                </p>
+            </div>
+        </div>
+      </div>
+    </Layout>
+  );

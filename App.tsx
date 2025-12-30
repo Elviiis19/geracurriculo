@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Builder from './pages/Builder';
-import { About, Privacy, Terms } from './pages/Static';
+import { About, Privacy, Terms, Cookies, Contact } from './pages/Static';
 
 const App: React.FC = () => {
   return (
@@ -13,6 +13,8 @@ const App: React.FC = () => {
         <Route path="/about" element={<About />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/cookies" element={<Cookies />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </HashRouter>
   );
