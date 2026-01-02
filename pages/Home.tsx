@@ -159,13 +159,13 @@ const Home: React.FC = () => {
         <div className="p-6 flex flex-col flex-grow relative z-10 bg-white">
             <div className="flex gap-2 mb-3" aria-label="Tags do modelo">
                 {tags.map((tag: string) => (
-                    <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200">
+                    <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md border border-slate-200">
                         {tag}
                     </span>
                 ))}
             </div>
             <h3 className="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">{title}</h3>
-            <p className="text-sm text-slate-600 mb-4 flex-grow leading-relaxed">{description}</p>
+            <p className="text-sm text-slate-500 mb-4 flex-grow leading-relaxed">{description}</p>
         </div>
       </Link>
   );
@@ -175,7 +175,7 @@ const Home: React.FC = () => {
     <details className="group bg-white rounded-xl border border-slate-200 overflow-hidden">
       <summary className="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-800 hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset">
         {question}
-        <ChevronDown size={20} className="text-slate-500 group-open:rotate-180 transition-transform" />
+        <ChevronDown size={20} className="text-slate-400 group-open:rotate-180 transition-transform" />
       </summary>
       <div className="px-5 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
         {answer}
@@ -185,14 +185,14 @@ const Home: React.FC = () => {
 
   return (
     <Layout>
-      {/* Hero Section - Optimized H1 for SEO and LCP */}
+      {/* Hero Section - Optimized H1 for SEO */}
       <div className="bg-white pt-16 pb-20 relative overflow-hidden">
-        {/* Performance Optimization: Hidden on mobile to save GPU, visible on lg screens */}
-        <div className="hidden lg:block absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-        <div className="hidden lg:block absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-purple-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+        {/* Restored Visuals: Visible on all screens, just blur effect */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-purple-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center gap-1.5 bg-white text-blue-700 text-xs font-bold px-4 py-1.5 rounded-full mb-8 border border-blue-100 shadow-sm">
+          <div className="inline-flex items-center gap-1.5 bg-white text-blue-700 text-xs font-bold px-4 py-1.5 rounded-full mb-8 border border-blue-100 shadow-sm animate-fade-in-up">
             <Star size={12} fill="currentColor" /> Gera Currículo Online
           </div>
           
@@ -200,7 +200,7 @@ const Home: React.FC = () => {
             Gera Currículo <span className="text-blue-600">Grátis</span> e Baixe em <span className="text-indigo-600">PDF</span>
           </h1>
           
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-700 mb-12 leading-relaxed font-medium">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600 mb-12 leading-relaxed font-medium">
             O melhor gerador de Curriculum Vitae online do Brasil. Escolha modelos profissionais, preencha no celular ou PC e baixe na hora. Sem cadastro.
           </p>
 
@@ -209,22 +209,22 @@ const Home: React.FC = () => {
               <Zap size={20} className="mr-2 text-yellow-400" /> Fazer Meu Currículo
             </Link>
             <a href="#modelos" aria-label="Ver modelos de currículo disponíveis" className="inline-flex items-center justify-center px-8 py-4 border-2 border-slate-200 text-lg font-bold rounded-2xl text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-300 shadow-sm transition-all duration-300">
-              <LayoutIcon size={20} className="mr-2 text-slate-500" /> Ver Modelos Prontos
+              <LayoutIcon size={20} className="mr-2 text-slate-400" /> Ver Modelos Prontos
             </a>
           </div>
           
           <div className="mt-16 pt-10 border-t border-slate-100 flex flex-wrap justify-center gap-x-8 gap-y-4">
-             <div className="flex items-center gap-2 text-sm font-semibold text-slate-600">
-                <CheckCircle2 size={16} className="text-emerald-600"/> 100% Gratuito
+             <div className="flex items-center gap-2 text-sm font-semibold text-slate-500">
+                <CheckCircle2 size={16} className="text-emerald-500"/> 100% Gratuito
              </div>
-             <div className="flex items-center gap-2 text-sm font-semibold text-slate-600">
-                <CheckCircle2 size={16} className="text-emerald-600"/> Sem Cadastro
+             <div className="flex items-center gap-2 text-sm font-semibold text-slate-500">
+                <CheckCircle2 size={16} className="text-emerald-500"/> Sem Cadastro
              </div>
-             <div className="flex items-center gap-2 text-sm font-semibold text-slate-600">
-                <CheckCircle2 size={16} className="text-emerald-600"/> Pronto para Imprimir
+             <div className="flex items-center gap-2 text-sm font-semibold text-slate-500">
+                <CheckCircle2 size={16} className="text-emerald-500"/> Pronto para Imprimir
              </div>
-             <div className="flex items-center gap-2 text-sm font-semibold text-slate-600">
-                <CheckCircle2 size={16} className="text-emerald-600"/> Formatação Automática
+             <div className="flex items-center gap-2 text-sm font-semibold text-slate-500">
+                <CheckCircle2 size={16} className="text-emerald-500"/> Formatação Automática
              </div>
           </div>
         </div>
@@ -235,7 +235,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">Como usar o Gera Currículo?</h2>
-                <p className="text-slate-600">Siga nosso passo-a-passo simples. Seu documento estará pronto em menos de 5 minutos.</p>
+                <p className="text-slate-500">Siga nosso passo-a-passo simples. Seu documento estará pronto em menos de 5 minutos.</p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 relative">
@@ -248,7 +248,7 @@ const Home: React.FC = () => {
                      </div>
                      <span className="bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">Passo 1</span>
                      <h3 className="text-xl font-bold text-slate-900 mb-2">Escolha o Modelo</h3>
-                     <p className="text-slate-600 text-sm leading-relaxed px-4">Navegue por nossa galeria de templates (Clássico, Moderno, Criativo) e selecione o ideal para sua área.</p>
+                     <p className="text-slate-500 text-sm leading-relaxed px-4">Navegue por nossa galeria de templates (Clássico, Moderno, Criativo) e selecione o ideal para sua área.</p>
                  </div>
 
                  <div className="flex flex-col items-center text-center group">
@@ -257,7 +257,7 @@ const Home: React.FC = () => {
                      </div>
                      <span className="bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">Passo 2</span>
                      <h3 className="text-xl font-bold text-slate-900 mb-2">Preencha seus Dados</h3>
-                     <p className="text-slate-600 text-sm leading-relaxed px-4">Insira suas informações, experiências e habilidades no nosso formulário fácil. Veja a prévia em tempo real.</p>
+                     <p className="text-slate-500 text-sm leading-relaxed px-4">Insira suas informações, experiências e habilidades no nosso formulário fácil. Veja a prévia em tempo real.</p>
                  </div>
 
                  <div className="flex flex-col items-center text-center group">
@@ -266,7 +266,7 @@ const Home: React.FC = () => {
                      </div>
                      <span className="bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">Passo 3</span>
                      <h3 className="text-xl font-bold text-slate-900 mb-2">Baixe em PDF</h3>
-                     <p className="text-slate-600 text-sm leading-relaxed px-4">Finalizou? Clique no botão de download e salve seu currículo em PDF de alta qualidade. Pronto para enviar!</p>
+                     <p className="text-slate-500 text-sm leading-relaxed px-4">Finalizou? Clique no botão de download e salve seu currículo em PDF de alta qualidade. Pronto para enviar!</p>
                  </div>
             </div>
         </div>
@@ -329,7 +329,7 @@ const Home: React.FC = () => {
       <section className="bg-white py-24">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-2 text-slate-500 font-bold uppercase tracking-widest text-xs mb-3">
+                  <div className="inline-flex items-center gap-2 text-slate-400 font-bold uppercase tracking-widest text-xs mb-3">
                       <HelpCircle size={16} /> Dúvidas
                   </div>
                   <h2 className="text-3xl font-bold text-slate-900">Perguntas Frequentes</h2>
