@@ -1,35 +1,72 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useReactToPrint } from 'react-to-print';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ResumeForm from '../components/ResumeForm';
 import ResumePreview from '../components/ResumePreview';
 import { INITIAL_DATA, ResumeData, TemplateType } from '../types';
 import { Printer, ChevronRight } from 'lucide-react';
 
+// Map SEO slugs to internal TemplateType
+const SLUG_TO_TEMPLATE: Record<string, TemplateType> = {
+  'curriculo-vitae-classico': TemplateType.VITAE,
+  'curriculo-executivo-minimal': TemplateType.MINIMAL,
+  'curriculo-moderno-com-foto': TemplateType.MODERN,
+  'curriculo-criativo-bold': TemplateType.CREATIVE,
+  'curriculo-programador-tech': TemplateType.TECH
+};
+
+// Map internal TemplateType to SEO slugs (for buttons)
+const TEMPLATE_TO_SLUG: Record<string, string> = {
+  [TemplateType.VITAE]: 'curriculo-vitae-classico',
+  [TemplateType.MINIMAL]: 'curriculo-executivo-minimal',
+  [TemplateType.MODERN]: 'curriculo-moderno-com-foto',
+  [TemplateType.CREATIVE]: 'curriculo-criativo-bold',
+  [TemplateType.TECH]: 'curriculo-programador-tech'
+};
+
 const Builder: React.FC = () => {
   const [searchParams] = useSearchParams();
+  const { slug } = useParams();
+  const navigate = useNavigate();
+  
   const [data, setData] = useState<ResumeData>(INITIAL_DATA);
   const [template, setTemplate] = useState<TemplateType>(TemplateType.VITAE);
   const printRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Priority 1: Check URL Slug (SEO Friendly)
+    if (slug && SLUG_TO_TEMPLATE[slug]) {
+      setTemplate(SLUG_TO_TEMPLATE[slug]);
+      return;
+    }
+
+    // Priority 2: Check Query Param (Legacy support)
     const templateParam = searchParams.get('template');
     if (templateParam) {
       if (Object.values(TemplateType).includes(templateParam as TemplateType)) {
           setTemplate(templateParam as TemplateType);
       }
     }
-  }, [searchParams]);
+  }, [slug, searchParams]);
 
   const handlePrint = () => {
     window.print();
   };
 
+  const handleTemplateChange = (newTemplate: TemplateType) => {
+    setTemplate(newTemplate);
+    // Update URL without reloading to keep state, but nice for sharing
+    const newSlug = TEMPLATE_TO_SLUG[newTemplate];
+    if (newSlug) {
+      navigate(`/modelo/${newSlug}`, { replace: true });
+    }
+  };
+
   const TemplateOption = ({ type, label, visual }: { type: TemplateType, label: string, visual: React.ReactNode }) => (
     <button 
         className={`relative group p-3 rounded-xl border-2 transition-all duration-200 flex flex-col items-center gap-2 ${template === type ? 'bg-blue-50 border-blue-600 shadow-sm' : 'bg-white border-slate-200 hover:border-blue-300 hover:bg-slate-50'}`}
-        onClick={() => setTemplate(type)}
+        onClick={() => handleTemplateChange(type)}
     >
         <div className="w-full h-16 bg-white border border-slate-200 rounded shadow-sm overflow-hidden pointer-events-none relative">
             {visual}

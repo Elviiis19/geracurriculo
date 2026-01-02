@@ -82,9 +82,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </button>
                 <div className={`absolute top-[85%] left-0 w-72 bg-white shadow-2xl rounded-2xl border border-slate-100 p-3 z-50 transform transition-all duration-200 origin-top-left
                     ${activeDropdown === 'classic' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
-                      <DropdownLink icon={BookOpen} to="/builder?template=vitae" title="Vitae (Acadêmico)" desc="Tradicional e sóbrio." />
+                      <DropdownLink icon={BookOpen} to="/modelo/curriculo-vitae-classico" title="Vitae (Acadêmico)" desc="Tradicional e sóbrio." />
                       <div className="h-px bg-slate-100 my-1"></div>
-                      <DropdownLink icon={LayoutIcon} to="/builder?template=minimal" title="Executivo Minimal" desc="Limpo e direto." />
+                      <DropdownLink icon={LayoutIcon} to="/modelo/curriculo-executivo-minimal" title="Executivo Minimal" desc="Limpo e direto." />
                 </div>
               </div>
 
@@ -103,8 +103,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </button>
                 <div className={`absolute top-[85%] left-0 w-72 bg-white shadow-2xl rounded-2xl border border-slate-100 p-3 z-50 transform transition-all duration-200 origin-top-left
                     ${activeDropdown === 'modern' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
-                      <DropdownLink icon={LayoutIcon} to="/builder?template=modern" title="Corporativo com Foto" desc="Barra lateral colorida." />
-                      <DropdownLink icon={PenTool} to="/builder?template=creative" title="Bold Creative" desc="Design & Marketing." />
+                      <DropdownLink icon={LayoutIcon} to="/modelo/curriculo-moderno-com-foto" title="Corporativo com Foto" desc="Barra lateral colorida." />
+                      <DropdownLink icon={PenTool} to="/modelo/curriculo-criativo-bold" title="Bold Creative" desc="Design & Marketing." />
                 </div>
               </div>
 
@@ -123,7 +123,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </button>
                 <div className={`absolute top-[85%] left-0 w-72 bg-white shadow-2xl rounded-2xl border border-slate-100 p-3 z-50 transform transition-all duration-200 origin-top-left
                     ${activeDropdown === 'tech' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
-                      <DropdownLink icon={Code} to="/builder?template=tech" title="Full Stack Dev" desc="Estilo IDE/Código." />
+                      <DropdownLink icon={Code} to="/modelo/curriculo-programador-tech" title="Full Stack Dev" desc="Estilo IDE/Código." />
                 </div>
               </div>
 
@@ -174,10 +174,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                            <BookOpen size={14} /> Modelos
                         </div>
                         <div className="grid grid-cols-1 gap-2 pl-2 border-l-2 border-slate-100 ml-1">
-                            <Link to="/builder?template=vitae" className="py-2 text-sm text-slate-700 font-medium hover:text-blue-600">Vitae (Clássico)</Link>
-                            <Link to="/builder?template=minimal" className="py-2 text-sm text-slate-700 font-medium hover:text-blue-600">Executivo</Link>
-                            <Link to="/builder?template=modern" className="py-2 text-sm text-slate-700 font-medium hover:text-blue-600">Moderno com Foto</Link>
-                            <Link to="/builder?template=tech" className="py-2 text-sm text-slate-700 font-medium hover:text-blue-600">Tech / Dev</Link>
+                            <Link to="/modelo/curriculo-vitae-classico" className="py-2 text-sm text-slate-700 font-medium hover:text-blue-600">Vitae (Clássico)</Link>
+                            <Link to="/modelo/curriculo-executivo-minimal" className="py-2 text-sm text-slate-700 font-medium hover:text-blue-600">Executivo</Link>
+                            <Link to="/modelo/curriculo-moderno-com-foto" className="py-2 text-sm text-slate-700 font-medium hover:text-blue-600">Moderno com Foto</Link>
+                            <Link to="/modelo/curriculo-programador-tech" className="py-2 text-sm text-slate-700 font-medium hover:text-blue-600">Tech / Dev</Link>
                         </div>
                     </div>
                     
