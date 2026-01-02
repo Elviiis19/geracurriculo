@@ -380,7 +380,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ data, template }) => {
                   {data.summary && (
                       <div>
                           <h3 className="text-sm font-bold text-[#007acc] mb-2">
-                              <span className="text-slate-400">//</span> SUMMARY
+                              <span className="text-slate-500">//</span> SUMMARY
                           </h3>
                           <div className="bg-slate-50 p-4 rounded border border-slate-200 text-sm text-slate-700">
                               <span className="text-purple-600">return</span> (<br/>
@@ -393,7 +393,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ data, template }) => {
                   {data.skills.length > 0 && (
                       <div>
                           <h3 className="text-sm font-bold text-[#007acc] mb-2">
-                              <span className="text-slate-400">//</span> STACK
+                              <span className="text-slate-500">//</span> STACK
                           </h3>
                           <div className="flex flex-wrap gap-2 text-xs">
                               {data.skills.map(s => (
@@ -408,7 +408,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ data, template }) => {
                   {data.experience.length > 0 && (
                       <div>
                           <h3 className="text-sm font-bold text-[#007acc] mb-4">
-                              <span className="text-slate-400">//</span> EXPERIENCE_LOG
+                              <span className="text-slate-500">//</span> EXPERIENCE_LOG
                           </h3>
                           <div className="space-y-8">
                               {data.experience.map((exp, idx) => (
@@ -437,13 +437,13 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ data, template }) => {
                    {data.education.length > 0 && (
                       <div>
                           <h3 className="text-sm font-bold text-[#007acc] mb-4">
-                              <span className="text-slate-400">//</span> EDUCATION
+                              <span className="text-slate-500">//</span> EDUCATION
                           </h3>
                           <div className="space-y-4">
                               {data.education.map(edu => (
                                   <div key={edu.id} className="text-sm">
                                       <span className="text-purple-600">import</span> {'{'} {edu.degree} {'}'} <span className="text-purple-600">from</span> "{edu.institution}";
-                                      <span className="text-slate-400 text-xs ml-2">// {edu.current ? 'Loading...' : formatDate(edu.endDate)}</span>
+                                      <span className="text-slate-500 text-xs ml-2">// {edu.current ? 'Loading...' : formatDate(edu.endDate)}</span>
                                   </div>
                               ))}
                           </div>

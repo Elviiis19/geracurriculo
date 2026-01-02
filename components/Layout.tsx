@@ -17,11 +17,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   // Componente para Link Interno (Router)
   const DropdownLink = ({ to, title, desc, icon: Icon }: { to: string, title: string, desc: string, icon: any }) => (
     <Link to={to} className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-all group/item">
-      <div className="mt-1 p-1.5 bg-slate-100 text-slate-600 rounded-lg group-hover/item:bg-blue-100 group-hover/item:text-blue-600 transition-colors">
+      <div className="mt-1 p-1.5 bg-slate-100 text-slate-700 rounded-lg group-hover/item:bg-blue-100 group-hover/item:text-blue-700 transition-colors">
         <Icon size={16} />
       </div>
       <div>
-        <div className="font-bold text-slate-800 group-hover/item:text-blue-700 text-sm transition-colors">{title}</div>
+        <div className="font-bold text-slate-800 group-hover/item:text-blue-800 text-sm transition-colors">{title}</div>
         <div className="text-xs text-slate-600 mt-0.5 leading-snug">{desc}</div>
       </div>
     </Link>
@@ -59,7 +59,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <FileText size={26} />
               </div>
               <div className="flex flex-col">
-                <h1 className="text-xl md:text-2xl font-black text-slate-900 tracking-tighter leading-none group-hover:text-blue-700 transition-colors">Gera Currículo</h1>
+                <h1 className="text-xl md:text-2xl font-black text-slate-900 tracking-tighter leading-none group-hover:text-blue-800 transition-colors">Gera Currículo</h1>
                 <span className="text-[10px] text-slate-600 font-bold uppercase tracking-[0.1em] mt-0.5">Online & Grátis</span>
               </div>
             </Link>
@@ -176,7 +176,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="md:hidden bg-white border-t border-slate-100 absolute w-full left-0 shadow-2xl z-40 max-h-[80vh] overflow-y-auto">
                 <div className="p-4 space-y-6">
                     <div>
-                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <div className="text-xs font-bold text-slate-600 uppercase tracking-wider mb-3 flex items-center gap-2">
                            <BookOpen size={14} /> Modelos
                         </div>
                         <div className="grid grid-cols-1 gap-2 pl-2 border-l-2 border-slate-100 ml-1">
@@ -233,7 +233,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
                   {/* Internal Links */}
                   <div className="text-center md:text-left">
-                      <h4 className="font-bold text-slate-900 uppercase tracking-wider text-xs mb-4">Institucional</h4>
+                      {/* Changed h4 to div for Accessibility Hierarchy */}
+                      <div className="font-bold text-slate-900 uppercase tracking-wider text-xs mb-4">Institucional</div>
                       <ul className="space-y-3 text-sm text-slate-600">
                           <li><Link to="/about" className="hover:text-blue-700 hover:underline">Quem Somos</Link></li>
                           <li><Link to="/contact" className="hover:text-blue-700 hover:underline">Fale Conosco</Link></li>
@@ -245,7 +246,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
                   {/* External Ecosystem */}
                   <div className="text-center md:text-left">
-                      <h4 className="font-bold text-slate-900 uppercase tracking-wider text-xs mb-4">Outros Projetos Úteis</h4>
+                      <div className="font-bold text-slate-900 uppercase tracking-wider text-xs mb-4">Outros Projetos Úteis</div>
                       <ul className="space-y-3 text-sm text-slate-600">
                           <li>
                               <a href="https://recibogratis.com.br" target="_blank" rel="noreferrer" className="hover:text-green-700 hover:underline flex items-center justify-center md:justify-start gap-2">
@@ -268,10 +269,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
               {/* Copyright */}
               <div className="text-center">
-                  <div className="text-xs font-medium text-slate-500 mb-2">
-                      Desenvolvido por <strong className="text-slate-700">Elvis Dias</strong>
+                  <div className="text-xs font-medium text-slate-600 mb-2">
+                      Desenvolvido por <strong className="text-slate-800">Elvis Dias</strong>
                   </div>
-                  <div className="text-[10px] text-slate-400">
+                  <div className="text-[10px] text-slate-500">
                       &copy; {year} Gera Currículo. Todos os direitos reservados.
                   </div>
               </div>

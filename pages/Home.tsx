@@ -159,7 +159,7 @@ const Home: React.FC = () => {
         <div className="p-6 flex flex-col flex-grow relative z-10 bg-white">
             <div className="flex gap-2 mb-3" aria-label="Tags do modelo">
                 {tags.map((tag: string) => (
-                    <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md border border-slate-200">
+                    <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200">
                         {tag}
                     </span>
                 ))}
@@ -175,7 +175,7 @@ const Home: React.FC = () => {
     <details className="group bg-white rounded-xl border border-slate-200 overflow-hidden">
       <summary className="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-800 hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset">
         {question}
-        <ChevronDown size={20} className="text-slate-400 group-open:rotate-180 transition-transform" />
+        <ChevronDown size={20} className="text-slate-500 group-open:rotate-180 transition-transform" />
       </summary>
       <div className="px-5 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
         {answer}
