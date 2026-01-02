@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   // Componente para Link Interno (Router)
   const DropdownLink = ({ to, title, desc, icon: Icon }: { to: string, title: string, desc: string, icon: any }) => (
     <Link to={to} className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-all group/item">
-      <div className="mt-1 p-1.5 bg-slate-100 text-slate-500 rounded-lg group-hover/item:bg-blue-100 group-hover/item:text-blue-600 transition-colors">
+      <div className="mt-1 p-1.5 bg-slate-100 text-slate-600 rounded-lg group-hover/item:bg-blue-100 group-hover/item:text-blue-600 transition-colors">
         <Icon size={16} />
       </div>
       <div>
