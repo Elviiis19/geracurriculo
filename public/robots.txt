@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://geracurriculo.vercel.app/sitemap.xml

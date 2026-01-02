@@ -117,12 +117,13 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
                             <button 
                                 onClick={() => handleChange('photoUrl', null)}
                                 className="absolute inset-0 bg-black/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                                aria-label="Remover foto"
                             >
                                 <X size={20} />
                             </button>
                         </div>
                     ) : (
-                        <label className="w-32 h-32 flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-full cursor-pointer hover:border-primary hover:bg-blue-50 transition-colors mx-auto bg-gray-50">
+                        <label className="w-32 h-32 flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-full cursor-pointer hover:border-primary hover:bg-blue-50 transition-colors mx-auto bg-gray-50" aria-label="Carregar foto">
                             <Upload size={24} className="text-gray-400" />
                             <span className="text-xs text-gray-500 mt-1">Carregar Foto</span>
                             <input type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
@@ -202,6 +203,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
                 onClick={() => handleImprove('summary', 'Resumo profissional para vaga de ' + data.jobTitle)}
                 disabled={isImproving || !data.summary}
                 className="text-xs flex items-center gap-1 text-primary hover:text-secondary disabled:opacity-50 font-medium px-2 py-1 rounded bg-blue-50"
+                aria-label="Melhorar resumo com inteligência artificial"
                 >
                 <Wand2 size={12} />
                 {isImproving ? 'Gerando...' : 'Melhorar com IA'}
@@ -229,6 +231,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
                   onClick={() => removeExperience(exp.id)}
                   className="text-red-400 hover:text-red-600 transition-colors p-1"
                   title="Remover experiência"
+                  aria-label="Remover esta experiência"
                 >
                   <Trash2 size={18} />
                 </button>
@@ -301,6 +304,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
                         onClick={() => handleImprove(`experience`, `Descreva de forma profissional as atividades de um ${exp.role} na empresa ${exp.company}: ${exp.description}`)}
                         // Note: complex handleImprove for array items would require refactoring handleImprove to accept value setter, sticking to simple field for now or manual edit
                         className="hidden text-xs text-primary hover:underline" 
+                        aria-label="Melhorar descrição da experiência com IA"
                     >
                         Melhorar texto
                     </button>
@@ -334,6 +338,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
                  <button
                   onClick={() => removeEducation(edu.id)}
                   className="text-red-400 hover:text-red-600 p-1"
+                  aria-label="Remover formação"
                 >
                   <Trash2 size={16} />
                 </button>
@@ -408,7 +413,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
                         placeholder="Ex: Microsoft Excel Avançado"
                         className="flex-grow bg-transparent border-none focus:ring-0 text-sm p-1"
                     />
-                     <button onClick={() => removeSkill('skills', skill.id)} className="text-gray-400 hover:text-red-500 p-1">
+                     <button onClick={() => removeSkill('skills', skill.id)} className="text-gray-400 hover:text-red-500 p-1" aria-label="Remover habilidade">
                         <X size={16} />
                     </button>
                 </div>
